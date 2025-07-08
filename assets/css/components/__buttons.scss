@@ -1,0 +1,66 @@
+  @import '../abstract/_variables';   
+    
+    
+    .icon-btn {
+        width: 40px;
+        height: 40px;
+        display: grid;
+        place-items: center;
+        background-color: var(--primary-container);
+        border-radius: var(--radius-circle);
+
+    }
+
+        .btn{
+      height: 40px;
+      min-width: max-content;  /* Prevents shrinking; fits content width */
+      width: auto;
+      padding-inline: 24px;    /* Adds 24px left and right padding */
+      display: inline-flex;
+      @include flex;
+      gap: 8px;
+      border-radius: var(--radius-4);
+      transition: var(--transition-short);
+
+      &.material-symbols-outlined{
+        font-size: 1.8rem;
+      }
+
+      &.has-icon{
+        padding-inline-start: 16px;
+      }
+
+      &.btn-primary{
+        background-color: var(--primary);
+        color: var(--white);
+
+        &:where(:hover , :focus-visible):not(:active) {  // Zero specificity — easy to override
+            background-color: var(--primary-hover);
+        }
+      }
+
+      &.btn-secondary{
+        background-color: var(--primary-container);
+
+      }
+    }
+
+    //panel button 
+    .tab-panel .btn-secondary {
+     width: 100%;
+     margin-block-start: 12px;
+}
+
+
+// Badge Button
+   .badge-btn{
+   height: 40px;
+   border-radius: var(--radius-pill);
+   background-color: var(--badge-btn);
+   color: var(--on-badge-btn);
+   max-width: max-content;
+   padding-inline: 16px;
+   display: grid;
+   place-items: center;
+
+ }

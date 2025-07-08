@@ -1,0 +1,82 @@
+@import'./_variables';
+
+ @mixin display-large {
+   font-family: $font-primary;
+   font-size: $fs-display-large;
+   font-weight: $weight-regular;
+   line-height: 32px;
+   letter-spacing: -0.25px;
+ }
+
+ @mixin display-medium {
+  font-size: $fs-display-medium;
+  line-height: 36px;
+ }
+
+ @mixin display-small {
+  font-family: $font-primary;
+  font-size: $fs-display-small;
+  font-weight: $weight-regular;
+  line-height: 32px;
+ }
+
+ @mixin headline-small {
+  font-size: $fs-headline-small;
+  font-weight: $weight-medium;
+  line-height: 24px;
+ }
+
+@mixin title-medium {
+  font-size: $fs-title-medium;
+  font-weight: $weight-medium;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+
+}
+
+@mixin title-small {
+  font-size: $fs-title-small;
+  font-weight: $weight-medium;
+  line-height: 20px;
+  letter-spacing: 0.1px;
+}
+
+ @mixin body-large {
+  font-size: $fs-body-large;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+ }
+
+ @mixin body-medium {
+  font-size: $fs-body-medium;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+ }
+
+ @mixin label-large {
+    font-size: $fs-label-large;
+    font-weight: $weight-medium;
+    line-height: 20px;
+    letter-spacing: 0.1pxl;
+ }
+
+ @mixin label-medium {
+    font-size: $fs-label-medium;
+    font-weight: $weight-medium;
+    line-height: 16px;
+    letter-spacing: 0.5px;
+ }
+
+ @mixin label-small {
+    font-size: $fs-label-small;
+    font-weight: $weight-medium;
+    line-height: 16px;
+    letter-spacing: 0.5px;
+ }
+
+ //flex
+ @mixin flex {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,16 @@
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore node modules (in case you add later)
+node_modules/
+
+# Ignore Sass cache
+.sass-cache/
+
+# Ignore build output
+dist/
+build/
+
+# VS Code
+.vscode/

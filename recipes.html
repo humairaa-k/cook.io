@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en"data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+     <!---
+     some primary meta tags 
+    --->
+
+    <title>All Recipes - Cook.io</title>
+    <meta name ="title" content="Cooki.io - Cooking Made Easy">
+     <meta name ="description" content="This is a recipe application">
+
+    
+     <!--- Favicon  --->
+
+     <link rel="shortcut icon" href="favicon.svg" type="image/svg+xml">
+
+     <!---
+        theme js
+     --->
+
+     <script src="./assets/js/theme.js"></script>
+
+      <!---
+        google fonts
+     --->
+
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=DM+Serif+Display&display=swap"
+     rel="stylesheet">
+     <!-- chatgpt recommende -->
+     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" rel="stylesheet" />
+
+       <!---
+        material icon 
+     --->
+     <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0..1,0" />
+
+   <!---
+        custom css
+     --->
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+   <!---
+        Custom JS 
+     --->
+     <script src="./assets/js/global.js" type="module"></script>
+     <script src="./assets/js/recipes.js" type="module"></script>
+
+</head>
+<body>
+   <header class="header"data-header>
+
+      <a href="/"class="logo">
+         <img src="./assets/images/logo-light.svg" width="156"height="32" alt="" class="logo-light">
+         <img src="./assets/images/logo-dark.svg" width="156"height="32" alt="" class="logo-dark">
+      </a>
+
+      <nav class="navbar">
+         <ul class="navbar_list">
+             <li><a href="/" class="navbar-link title-small has-state ">Home</a></li>
+
+            <li><a href="#"class="navbar-link title-small has-state active">Recipes</a></li>
+
+
+         </ul>
+      </nav>
+
+      <!-- Theme Toggle Button -->
+     <button class="icon-btn theme-switch has-state" aria-pressed="false"
+           aria-label="Toggle light and dark theme"
+           data-theme-btn>
+      <span class="material-symbols-outlined light-icon" aria-hidden="true">light_mode</span>
+      <span class="material-symbols-outlined dark-icon" aria-hidden="true">dark_mode</span>
+    </button>
+   
+   <!-- Saved Recipes Link -->
+   <a href="./saved-recipes.html" class="btn btn-primary has-icon">
+      <span class="material-symbols-outlined" aria-hidden="true">book</span>
+      <span class="span">Saved Recipes</span>
+
+   </a>
+ 
+   </header>
+
+  <!-- Mobile Nav -->
+
+   <nav class="mobile-nav"aria-label="primary">
+     <ul class="nav-list">
+       <li class="nav-item">
+         <a href="#"class="nav-link"aria-current="true">
+            <span class="item-icon">
+               <span class="material-symbols-outlined" aria-hidden="true">lunch_dining</span>
+            </span>
+            <span class="label-medium">Recipes</span>
+         </a>
+       </li>
+
+        <li class="nav-item">
+         <a href="index.html"class="nav-link">
+            <span class="item-icon">
+             <span class="material-symbols-outlined" aria-hidden="true">home</span>
+            </span>
+            <span class="label-medium">Home</span>
+         </a>
+       </li>
+
+        <li class="nav-item">
+         <a href="./saved-recipes.html"class="nav-link">
+            <span class="item-icon">
+               <span class="material-symbols-outlined" aria-hidden="true">book</span>
+            </span>
+            <span class="label-medium">Saved</span>
+         </a>
+       </li>
+
+     </ul>
+   </nav>
+
+   <main>
+      <article class="article recipe-page">
+
+      <!-- FILTER BAR-->
+
+      <div class="filter-bar"data-filter-bar>
+        <div class="title-wrapper">
+            <span class="material-symbols-outlined" aria-hidden="true">filter_list</span>
+            <p class="title-medium">Filters</p>
+
+            <button class="icon-btn close-btn has-state"aria-label="Close filter bar"data-filter-toggler>
+                <span class="material-symbols-outlined" aria-hidden="true">close</span>
+            </button>
+        </div>
+
+        <div class="filter-content">
+            <div class="search-wrapper">
+                <div class="input-outlined" style="margin-top: 1rem;">
+                  <label for="smart-search" class="body-large label">Search Recipes</label>
+                  <input 
+                    type="search" 
+                    name="smart-search" 
+                    id="smart-search" 
+                    class="input-field body-large" 
+                    placeholder="Type meal name..."
+                    aria-label="Search by meal name "
+                    autocomplete="off" >
+              </div>
+
+
+        <!-- <div class="accordion-container" data-accordion>
+           <button class="accordion-btn has-state"aria-controls="cook-time"aria-expanded="false"
+           data-accordion-btn><span class="material-symbols-outlined" aria-hidden="true">timer</span>
+           <p class="label-large">Cooking Time</p>
+
+           <span class="material-symbols-outlined trailing-icon" aria-hidden="true">expand_more</span>
+           </button>
+
+          <div class="accordion-content" id="cook-time">
+            <div class="accordion-overflow"data-filter="time">
+                <label class="filter-chip label-large">
+                    &lt; 5 minutes
+                    <input type="radio"name="cook-time"id="" value="5"
+                    class="checkbox" aria-label="5 or less minutes">
+                </label>
+            </div>
+          </div> -->
+<!-- 
+          <div class="accordion-content" id="cook-time">
+            <div class="accordion-overflow"data-filter="time">
+                <label class="filter-chip label-large">
+                    5 - 10 minutes
+                    <input type="radio"name="cook-time"id="" value="5-10"
+                    class="checkbox" aria-label="5 to 10 minutes">
+                </label>
+            </div>
+          </div> -->
+
+          <!-- Categories Accordion -->
+  <div class="accordion-container" data-accordion>
+
+    <button class="accordion-btn has-state" aria-controls="categories" aria-expanded="false" data-accordion-btn>
+      <span class="material-symbols-outlined" aria-hidden="true">category</span>
+      <p class="label-large">Meal Categories</p>
+      <span class="material-symbols-outlined trailing-icon" aria-hidden="true">expand_more</span>
+    </button>
+
+    <div class="accordion-content" id="categories">
+      <div class="accordion-overflow" data-filter="category">
+        <!-- Example MealDB categories -->
+        <label class="filter-chip label-large">
+          Dessert
+          <input type="radio" name="category" value="Dessert" class="checkbox" aria-label="Dessert">
+        </label>
+
+        <label class="filter-chip label-large">
+          Seafood
+          <input type="radio" name="category" value="Seafood" class="checkbox" aria-label="Seafood">
+        </label>
+
+        <label class="filter-chip label-large">
+          Beef
+          <input type="radio" name="category" value="Beef" class="checkbox" aria-label="Beef">
+        </label>
+
+        <label class="filter-chip label-large">
+          Chicken
+          <input type="radio" name="category" value="Chicken" class="checkbox" aria-label="Chicken">
+        </label>
+      </div>
+    </div>
+
+  </div>
+
+ 
+
+  <!-- Cuisine (Area) Accordion -->
+<div class="accordion-container" data-accordion>
+
+  <button class="accordion-btn has-state" aria-controls="cuisine" aria-expanded="false" data-accordion-btn>
+    <span class="material-symbols-outlined" aria-hidden="true">public</span>
+    <p class="label-large">Cuisine</p>
+    <span class="material-symbols-outlined trailing-icon" aria-hidden="true">expand_more</span>
+  </button>
+
+  <div class="accordion-content" id="cuisine">
+    <div class="accordion-overflow" data-filter="cuisine">
+      <label class="filter-chip label-large">
+        American
+        <input type="radio" name="cuisine" value="American" class="checkbox" aria-label="American">
+      </label>
+      <label class="filter-chip label-large">
+        British
+        <input type="radio" name="cuisine" value="British" class="checkbox" aria-label="British">
+      </label>
+      <label class="filter-chip label-large">
+        Canadian
+        <input type="radio" name="cuisine" value="Canadian" class="checkbox" aria-label="Canadian">
+      </label>
+      <label class="filter-chip label-large">
+        Chinese
+        <input type="radio" name="cuisine" value="Chinese" class="checkbox" aria-label="Chinese">
+      </label>
+      <label class="filter-chip label-large">
+        Dutch
+        <input type="radio" name="cuisine" value="Dutch" class="checkbox" aria-label="Dutch">
+      </label>
+      <label class="filter-chip label-large">
+        Egyptian
+        <input type="radio" name="cuisine" value="Egyptian" class="checkbox" aria-label="Egyptian">
+      </label>
+      <label class="filter-chip label-large">
+        French
+        <input type="radio" name="cuisine" value="French" class="checkbox" aria-label="French">
+      </label>
+      <label class="filter-chip label-large">
+        Greek
+        <input type="radio" name="cuisine" value="Greek" class="checkbox" aria-label="Greek">
+      </label>
+      <label class="filter-chip label-large">
+        Indian
+        <input type="radio" name="cuisine" value="Indian" class="checkbox" aria-label="Indian">
+      </label>
+      <label class="filter-chip label-large">
+        Irish
+        <input type="radio" name="cuisine" value="Irish" class="checkbox" aria-label="Irish">
+      </label>
+      <label class="filter-chip label-large">
+        Italian
+        <input type="radio" name="cuisine" value="Italian" class="checkbox" aria-label="Italian">
+      </label>
+      <label class="filter-chip label-large">
+        Jamaican
+        <input type="radio" name="cuisine" value="Jamaican" class="checkbox" aria-label="Jamaican">
+      </label>
+      <label class="filter-chip label-large">
+        Japanese
+        <input type="radio" name="cuisine" value="Japanese" class="checkbox" aria-label="Japanese">
+      </label>
+      <label class="filter-chip label-large">
+        Kenyan
+        <input type="radio" name="cuisine" value="Kenyan" class="checkbox" aria-label="Kenyan">
+      </label>
+      <label class="filter-chip label-large">
+        Malaysian
+        <input type="radio" name="cuisine" value="Malaysian" class="checkbox" aria-label="Malaysian">
+      </label>
+      <label class="filter-chip label-large">
+        Mexican
+        <input type="radio" name="cuisine" value="Mexican" class="checkbox" aria-label="Mexican">
+      </label>
+      <label class="filter-chip label-large">
+        Moroccan
+        <input type="radio" name="cuisine" value="Moroccan" class="checkbox" aria-label="Moroccan">
+      </label>
+      <label class="filter-chip label-large">
+        Russian
+        <input type="radio" name="cuisine" value="Russian" class="checkbox" aria-label="Russian">
+      </label>
+      <label class="filter-chip label-large">
+        Spanish
+        <input type="radio" name="cuisine" value="Spanish" class="checkbox" aria-label="Spanish">
+      </label>
+      <label class="filter-chip label-large">
+        Thai
+        <input type="radio" name="cuisine" value="Thai" class="checkbox" aria-label="Thai">
+      </label>
+      <label class="filter-chip label-large">
+        Tunisian
+        <input type="radio" name="cuisine" value="Tunisian" class="checkbox" aria-label="Tunisian">
+      </label>
+      <label class="filter-chip label-large">
+        Turkish
+        <input type="radio" name="cuisine" value="Turkish" class="checkbox" aria-label="Turkish">
+      </label>
+      <label class="filter-chip label-large">
+        Vietnamese
+        <input type="radio" name="cuisine" value="Vietnamese" class="checkbox" aria-label="Vietnamese">
+      </label>
+    </div>
+  </div>
+</div>
+
+ <!-- Ingredient Filter Accordion -->
+<div class="accordion-container" data-accordion>
+  <button class="accordion-btn has-state" aria-controls="ingredient-filter" aria-expanded="false" data-accordion-btn>
+    <span class="material-symbols-outlined" aria-hidden="true">restaurant_menu</span>
+    <p class="label-large">Main Ingredient</p>
+    <span class="material-symbols-outlined trailing-icon" aria-hidden="true">expand_more</span>
+  </button>
+
+  <div class="accordion-content" id="ingredient-filter">
+    <div class="accordion-overflow" data-filter="ingredient">
+      <label class="filter-chip label-large">
+        Chicken
+        <input type="radio" name="ingredient" value="Chicken" class="checkbox" aria-label="Chicken">
+      </label>
+      <label class="filter-chip label-large">
+        Beef
+        <input type="radio" name="ingredient" value="Beef" class="checkbox" aria-label="Beef">
+      </label>
+      <label class="filter-chip label-large">
+        Potato
+        <input type="radio" name="ingredient" value="Potato" class="checkbox" aria-label="Potato">
+      </label>
+      <label class="filter-chip label-large">
+        Cheese
+        <input type="radio" name="ingredient" value="Cheese" class="checkbox" aria-label="Cheese">
+      </label>
+      <label class="filter-chip label-large">
+        Rice
+        <input type="radio" name="ingredient" value="Rice" class="checkbox" aria-label="Rice">
+      </label>
+    </div>
+  </div>
+</div>
+
+ 
+
+  <!-- Alphabet Filter (A–Z Style Buttons) -->
+   
+<div class="accordion-container" data-accordion>
+  <button class="accordion-btn has-state" aria-controls="alphabet-filter"  aria-expanded="false" data-accordion-btn>
+    <span class="material-symbols-outlined" aria-hidden="true">abc</span>
+    <p class="label-large">Search by Alphabet</p>
+    <span class="material-symbols-outlined trailing-icon" aria-hidden="true">expand_more</span>
+  </button>
+
+  <div class="accordion-content" id="alphabet-filter">
+    <div class="accordion-overflow" data-filter="alphabet-filter">
+    <div class="alphabet-buttons" style="display: flex; flex-wrap: wrap; gap: 0.4rem; padding: 0.5rem;">
+      <!-- A–Z Buttons -->
+      <!-- You can generate this list dynamically in JS, but here's static HTML -->
+      <button class="alphabet-btn" data-letter="A">A</button>
+      <button class="alphabet-btn" data-letter="B">B</button>
+      <button class="alphabet-btn" data-letter="C">C</button>
+      <button class="alphabet-btn" data-letter="D">D</button>
+      <button class="alphabet-btn" data-letter="E">E</button>
+      <button class="alphabet-btn" data-letter="F">F</button>
+      <button class="alphabet-btn" data-letter="G">G</button>
+      <button class="alphabet-btn" data-letter="H">H</button>
+      <button class="alphabet-btn" data-letter="I">I</button>
+      <button class="alphabet-btn" data-letter="J">J</button>
+      <button class="alphabet-btn" data-letter="K">K</button>
+      <button class="alphabet-btn" data-letter="L">L</button>
+      <button class="alphabet-btn" data-letter="M">M</button>
+      <button class="alphabet-btn" data-letter="N">N</button>
+      <button class="alphabet-btn" data-letter="O">O</button>
+      <button class="alphabet-btn" data-letter="P">P</button>
+      <button class="alphabet-btn" data-letter="Q">Q</button>
+      <button class="alphabet-btn" data-letter="R">R</button>
+      <button class="alphabet-btn" data-letter="S">S</button>
+      <button class="alphabet-btn" data-letter="T">T</button>
+      <button class="alphabet-btn" data-letter="U">U</button>
+      <button class="alphabet-btn" data-letter="V">V</button>
+      <button class="alphabet-btn" data-letter="W">W</button>
+      <button class="alphabet-btn" data-letter="X">X</button>
+      <button class="alphabet-btn" data-letter="Y">Y</button>
+      <button class="alphabet-btn" data-letter="Z">Z</button>
+    </div>
+    </div>
+  </div>
+
+</div>
+
+  <div class="filter-actions">
+        <button class="btn btn-secondary label-large has-state"data-filter-clear>Clear</button>
+
+        <button class="btn btn-primary label-large" data-filter-toggler data-filter-submit>Apply</button>
+
+     </div>
+
+        </div>
+      </div>
+   </div>   
+   
+   <div class="overlay"data-overlay ></div>
+
+   <div class="recipe-container container">
+     <div class="title-wrapper">
+      <h2 class="headline-small">All Recipes</h2>
+      <button class="btn btn-secondary btn-filter has-icon has-state"
+      aria-label="Open filter bar"data-filter-toggler data-filter-btn>
+      
+      <span class="material-symbols-outlined" aria-hidden="true">filter_list</span>
+
+      <div class="wrapper">
+        <span class="label-large">Filters</span>
+
+        <div class="badge label-small"data-filter-count></div>
+      </div>
+
+    </button>
+
+     </div>
+
+     <div class="grid-list"data-grid-list></div>
+
+     <div class="load-more grid-list"data-load-more></div>
+   </div>
+
+   </article>
+   </main>
+
+  <!-- footer -->
+
+  <footer class="footer">
+    <p class="copyright body-medium">&copy; cook.io all rights reserved 2025</p>
+
+       <a href="/"class="logo">
+         <img src="./assets/images/logo-light.svg" width="156"height="32" alt="" class="logo-light">
+         <img src="./assets/images/logo-dark.svg" width="156"height="32" alt="" class="logo-dark">
+      </a>
+
+      <a href="http://www.edaman.com/" target="_blank" class="edaman">
+        <img src="./assets/images/edamam.svg" width="200"height="40"loading="lazy"alt="mealdb free recipe api">
+      </a>
+  </footer>
+    
+</body>
+</html>

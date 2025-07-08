@@ -1,0 +1,80 @@
+ @import '../abstract/_variables';
+
+// _card.scss
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .card-media {
+    aspect-ratio: 1/1;
+    border-radius: var(--radius-4);
+  }
+
+  .card-body {
+    flex-grow: 1;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &-link {
+    display: -webkit-box;  //showing only 2 line of para
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow-y: hidden;
+    transition: var(--transition-short);
+
+    &:where(:hover, :focus-visible) {
+      color: var(--primary);
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+    }
+  }
+
+  .meta-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .meta-item {
+      display: flex !important;
+      gap: 8px;
+      align-items: center !important;
+
+      .material-symbols-outlined {
+        font-size: 1.8rem;
+      }
+    }
+
+    //there was bookmark style
+  }
+}
+
+.card.animate {
+  animation: fade-in 500ms var(--transition-timing-function, ease) forwards;
+  transform: translateY(30px);
+  opacity: 0;
+}
+
+.img-holder {
+  background-color: var(--image-background);
+  background-image: url("../images/image-placeholder.svg");
+  background-repeat: no-repeat;
+  background-size: 30%;
+  background-position: center;
+  overflow: hidden;
+
+  .img-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

@@ -1,0 +1,22 @@
+
+
+
+ .footer{
+   padding: 16px;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   align-items: center;
+   column-gap: 12px;
+   border-block-start: 1px solid var(--outline);
+
+    .logo{
+        display: none;
+    }
+
+    .copyright{
+      opacity: 0.8;
+    }
+
+    .edaman img { width: 180px;}
+ }

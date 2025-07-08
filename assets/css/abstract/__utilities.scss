@@ -1,0 +1,38 @@
+@import './_variables';
+    
+//btn styling
+    .has-state {
+        position: relative;
+        overflow: hidden;
+
+        &::after{
+         content: "";
+         position: absolute;
+         inset: 0;
+         transition: var(--transition-short);
+        }
+
+        &:where(:hover, :focus-visible):not(:active)::after {
+            background-color: var(--alpha-10);
+        }
+    }
+
+
+.saved .bookmark-add,
+.removed .bookmark {
+  display: none;
+}
+
+.saved .bookmark,
+.removed .bookmark {
+  font-feature-settings: "FILL" 1;
+}
+
+
+ .snackbar-container {
+  right: auto;
+  bottom: 32px;
+  left: 32px;
+  min-width: 360px;
+  width: 100%;
+ }

@@ -1,0 +1,52 @@
+ @import'../abstract/_mixin';
+
+ /** The .. (two dots) in @use '../abstracts/mixins'; means:
+“Go up one folder level from the current file.” **/
+
+  .display-large {
+  @include display-large;
+}
+
+.display-medium {
+  @include display-medium;
+}
+
+.display-small {
+  @include display-small;
+}
+
+.headline-small {
+  @include headline-small;
+}
+
+.title-medium {
+  @include title-medium;
+}
+
+.title-small {
+  @include title-small;
+}
+
+.body-large {
+  @include body-large;
+}
+
+.body-medium {
+  @include body-medium;
+}
+
+.label-large {
+  @include label-large;
+}
+
+.label-medium {
+  @include label-medium;
+}
+
+.label-small {
+  @include label-small;
+}
+
+
+
+

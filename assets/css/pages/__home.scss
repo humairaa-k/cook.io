@@ -1,0 +1,60 @@
+@import '../abstract/_variables';
+
+ .slider{
+    --gap : 8px;
+    position: relative;
+    overflow-x: auto;
+    scroll-snap-type: inline mandatory;/* Enable mandatory horizontal scroll snapping for smooth snap-to-item scrolling */
+    padding-block-end: 5px;  //bottom
+
+    &::-webkit-scrollbar{ height: 4px; }
+
+    &::-webkit-scrollbar-thumb{ background-color: transparent;}
+
+    &:where(:hover, :focus-within)::-webkit-scrollbar-thumb{ background-color: var(--alpha-10);}
+
+   &__wrapper{
+     display: flex;
+     align-items: stretch;
+     gap: 8px;
+     transition: var(--transition-medium);
+   }
+
+     &__item {
+    flex-shrink: 0; //avoids shrinking
+    width: 250px; // 👈 fixed width works best for sliders
+    scroll-snap-align: start;
+  }
+   .load-more-card{
+      height: 100%;
+      background-color: var(--primary-container);
+      border-radius: var(--radius-4);
+      border: 1px solid var(--outline);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+   }
+
+ }
+
+ .tag{
+   text-align: center;
+
+   .section-text{
+      max-width: 50ch;
+      margin-inline: auto;
+   
+   }
+
+   .tag-list{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      margin-block-start: 24px; //means margin top
+   }
+
+ }
+
