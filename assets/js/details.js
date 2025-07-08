@@ -21,12 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  // now proceed with fetchData...
-
-
-
-  // Define the correct endpoint for TheMealDB
-  //const ACCESS_POINT = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`;
 
 fetchData([`lookup.php?i=${mealId}`], data => {
     if (!data.meals || data.meals.length === 0) {
