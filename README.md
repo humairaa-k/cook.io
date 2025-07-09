@@ -89,4 +89,3 @@ Follows a modular SCSS architecture using folders:
 
 👩‍💻 Author
 Made with 💜 by Humairaa K.
-🔐 This repository is private.
